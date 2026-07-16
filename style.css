@@ -188,19 +188,16 @@ body.dragging{
 
 
 #player-header{
-
     display:flex;
-    flex-shrink:0;
-
+    width:100%;
 }
 
 .team-title{
-
-    flex:1;
+    width:50%;
+    box-sizing:border-box;
     text-align:center;
     font-weight:bold;
     padding:8px 0;
-
 }
 
 #player-lists{
