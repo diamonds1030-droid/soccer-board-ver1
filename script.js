@@ -16,7 +16,19 @@ name:"選手"+i
 
 }
 
+const saved = localStorage.getItem("playerNames");
 
+if(saved){
+
+    const data = JSON.parse(saved);
+
+    data.forEach((p,index)=>{
+
+        players[index].name = p.name;
+
+    });
+
+}
 
 const list=document.getElementById("player-list");
 
@@ -66,19 +78,6 @@ input.addEventListener("input", () => {
 
 });
 
-const saved = localStorage.getItem("playerNames");
-
-if(saved){
-
-    const data = JSON.parse(saved);
-
-    data.forEach((p,index)=>{
-
-        players[index].name = p.name;
-
-    });
-
-}
 
 
 let btn=div.querySelector("button");
