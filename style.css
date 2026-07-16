@@ -186,16 +186,40 @@ body.dragging{
     -webkit-user-select:none;
 }
 
-#player-lists{
+
+#player-header{
 
     display:flex;
-    gap:10px;
+    flex-shrink:0;
 
 }
 
-.team{
+.team-title{
 
     flex:1;
+    text-align:center;
+    font-weight:bold;
+    padding:8px 0;
+
+}
+
+#player-lists{
+
+    display:flex;
+    flex:1;
+    overflow:hidden;
+
+}
+
+#player-list-yellow,
+#player-list-blue{
+
+    flex:1;
+
+    overflow-y:auto;
+    overflow-x:hidden;
+
+    padding:4px;
 
 }
 
