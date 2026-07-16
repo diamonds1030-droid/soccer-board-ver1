@@ -30,7 +30,8 @@ if(saved){
 
 }
 
-const list=document.getElementById("player-list");
+const yellowList = document.getElementById("player-list-yellow");
+const blueList = document.getElementById("player-list-blue");
 
 const field=document.getElementById("field");
 
@@ -89,7 +90,15 @@ createPlayerOnField(player);
 
 };
 
-list.appendChild(div);
+if(player.number <= 13){
+
+    yellowList.appendChild(div);
+
+}else{
+
+    blueList.appendChild(div);
+
+}
 
 });
 
