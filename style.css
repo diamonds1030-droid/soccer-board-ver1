@@ -167,3 +167,21 @@ button{
 font-size:12px;
 
 }
+/* コートではスクロールさせない */
+#field{
+    touch-action: none;
+}
+
+/* ドラッグ中は画面固定 */
+body.dragging{
+    overflow: hidden;
+    position: fixed;
+    width:100%;
+}
+
+/* 選手のタッチ操作を優先 */
+.player{
+    touch-action:none;
+    user-select:none;
+    -webkit-user-select:none;
+}
