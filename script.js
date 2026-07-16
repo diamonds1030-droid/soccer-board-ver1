@@ -138,30 +138,27 @@ el.addEventListener("mousedown",start);
 
 function start(e){
 
+    e.preventDefault();
 
-let point=e.touches?e.touches[0]:e;
+    document.body.classList.add("dragging");
 
+    let point = e.touches ? e.touches[0] : e;
 
-offsetX=point.clientX-el.offsetLeft;
+    offsetX = point.clientX - el.offsetLeft;
+    offsetY = point.clientY - el.offsetTop;
 
-offsetY=point.clientY-el.offsetTop;
+    document.addEventListener("touchmove", move, {passive:false});
+    document.addEventListener("mousemove", move);
 
-
-document.addEventListener("touchmove",move);
-
-document.addEventListener("mousemove",move);
-
-
-document.addEventListener("touchend",end);
-
-document.addEventListener("mouseup",end);
-
-
+    document.addEventListener("touchend", end);
+    document.addEventListener("mouseup", end);
 }
 
 
 
 function move(e){
+
+e.preventDefault();
 
 
 let point=e.touches?e.touches[0]:e;
@@ -184,16 +181,15 @@ el.style.top=y+"px";
 
 }
 
-
-
 function end(){
 
+    document.body.classList.remove("dragging");
 
-document.removeEventListener("touchmove",move);
+    document.removeEventListener("touchmove", move);
+    document.removeEventListener("mousemove", move);
 
-document.removeEventListener("mousemove",move);
-
-
+    document.removeEventListener("touchend", end);
+    document.removeEventListener("mouseup", end);
 }
 
 }
