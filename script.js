@@ -87,7 +87,7 @@ btn.onclick=()=>{
 
 createPlayerOnField(player);
 
-});
+};
 
 p.addEventListener("touchend",()=>{
 
@@ -95,12 +95,7 @@ p.addEventListener("touchend",()=>{
 
 });
 
-};
-
-
-
 list.appendChild(div);
-
 
 });
 
