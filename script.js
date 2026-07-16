@@ -89,12 +89,6 @@ createPlayerOnField(player);
 
 };
 
-p.addEventListener("touchend",()=>{
-
-    clearTimeout(timer);
-
-});
-
 list.appendChild(div);
 
 });
@@ -146,7 +140,11 @@ p.addEventListener("touchstart",()=>{
         }
 
     },700);
+p.addEventListener("touchend",()=>{
 
+    clearTimeout(timer);
+
+});
 }
 
 
