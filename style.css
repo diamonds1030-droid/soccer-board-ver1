@@ -201,23 +201,19 @@ body.dragging{
 }
 
 #player-lists{
-
     display:flex;
+    width:100%;
     flex:1;
     overflow:hidden;
-
 }
 
 #player-list-yellow,
 #player-list-blue{
-
-    flex:1;
-
+    width:50%;
     overflow-y:auto;
     overflow-x:hidden;
-
+    box-sizing:border-box;
     padding:4px;
-
 }
 
 .yellow-title{
