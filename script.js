@@ -55,12 +55,30 @@ value="${player.name}"
 let input=div.querySelector("input");
 
 
-input.addEventListener("change",()=>{
+input.addEventListener("input", () => {
 
-player.name=input.value;
+    player.name = input.value;
+
+    localStorage.setItem(
+        "playerNames",
+        JSON.stringify(players)
+    );
 
 });
 
+const saved = localStorage.getItem("playerNames");
+
+if(saved){
+
+    const data = JSON.parse(saved);
+
+    data.forEach((p,index)=>{
+
+        players[index].name = p.name;
+
+    });
+
+}
 
 
 let btn=div.querySelector("button");
@@ -69,6 +87,28 @@ let btn=div.querySelector("button");
 btn.onclick=()=>{
 
 createPlayerOnField(player);
+
+let timer;
+
+p.addEventListener("touchstart",()=>{
+
+    timer = setTimeout(()=>{
+
+        if(confirm(player.name + " を削除しますか？")){
+
+            p.remove();
+
+        }
+
+    },700);
+
+});
+
+p.addEventListener("touchend",()=>{
+
+    clearTimeout(timer);
+
+});
 
 };
 
@@ -96,7 +136,6 @@ p.className="player";
 p.innerHTML=
 
 `
-${player.number}<br>
 ${player.name}
 `;
 
