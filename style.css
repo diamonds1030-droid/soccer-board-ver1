@@ -76,36 +76,40 @@ bottom:0;
 
 }
 
-
-/* 選手 */
-
 .player{
 
-position:absolute;
+    position:absolute;
 
-width:45px;
+    width:45px;
+    height:45px;
 
-height:45px;
+    border-radius:50%;
+    background:#fff;
+    border:2px solid #333;
 
-border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
 
-background:#fff;
+    text-align:center;
 
-border:2px solid #333;
+    font-size:12px;
+    font-weight:bold;
 
-text-align:center;
+    box-sizing:border-box;
 
-font-size:12px;
+    cursor:pointer;
 
-font-weight:bold;
+    z-index:5;
 
-cursor:pointer;
+    user-select:none;
+    -webkit-user-select:none;
 
-z-index:5;
+    touch-action:none;
 
+    overflow:hidden;
+    padding:2px;
 }
-
-
 
 
 /* 選手一覧 */
