@@ -115,17 +115,15 @@ bottom:0;
 /* 選手一覧 */
 
 #players-area{
-
-background:white;
-
-padding:10px;
-
-height:35vh;
-
-overflow-y:auto;
-
+    width:90%;
+    margin:auto;
+    background:#fff;
+    height:35vh;
+    display:flex;
+    flex-direction:column;
+    overflow:hidden;
+    box-sizing:border-box;
 }
-
 
 
 .player-item{
