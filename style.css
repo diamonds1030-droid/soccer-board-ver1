@@ -127,17 +127,12 @@ bottom:0;
 
 
 .player-item{
-
-display:flex;
-
-align-items:center;
-
-gap:10px;
-
-padding:8px;
-
-border-bottom:1px solid #ddd;
-
+    display:flex;
+    align-items:center;
+    width:100%;
+    gap:2px;
+    margin-bottom:4px;
+    box-sizing:border-box;
 }
 
 
@@ -154,19 +149,17 @@ flex:1;
 
 }
 
-
-input{
-
-width:120px;
-
+.player-item input{
+    flex:1;
+    min-width:0;
 }
 
-
-button{
-
-font-size:12px;
-
+.player-item button{
+    width:42px;
+    flex-shrink:0;
+    font-size:11px;
 }
+
 /* コートではスクロールさせない */
 #field{
     touch-action: none;
