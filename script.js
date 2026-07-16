@@ -87,20 +87,6 @@ btn.onclick=()=>{
 
 createPlayerOnField(player);
 
-let timer;
-
-p.addEventListener("touchstart",()=>{
-
-    timer = setTimeout(()=>{
-
-        if(confirm(player.name + " を削除しますか？")){
-
-            p.remove();
-
-        }
-
-    },700);
-
 });
 
 p.addEventListener("touchend",()=>{
@@ -152,6 +138,19 @@ field.appendChild(p);
 
 dragElement(p);
 
+let timer;
+
+p.addEventListener("touchstart",()=>{
+
+    timer = setTimeout(()=>{
+
+        if(confirm(player.name + " を削除しますか？")){
+
+            p.remove();
+
+        }
+
+    },700);
 
 }
 
