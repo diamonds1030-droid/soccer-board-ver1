@@ -95,60 +95,44 @@ list.appendChild(div);
 
 
 
-
-
 // コート配置
-
 function createPlayerOnField(player){
 
+    let p = document.createElement("div");
 
-let p=document.createElement("div");
+    p.className = "player";
+    p.innerHTML = player.name;
 
+    p.style.left = "45%";
+    p.style.top = "45%";
 
-p.className="player";
+    field.appendChild(p);
 
-p.innerHTML=
+    dragElement(p);
 
-`
-${player.name}
-`;
+    let timer;
 
+    p.addEventListener("touchstart", () => {
 
+        timer = setTimeout(() => {
 
-p.style.left="45%";
+            if(confirm(player.name + " を削除しますか？")){
+                p.remove();
+            }
 
-p.style.top="45%";
+        }, 700);
 
+    });
 
+    p.addEventListener("touchend", () => {
+        clearTimeout(timer);
+    });
 
-field.appendChild(p);
+    p.addEventListener("touchmove", () => {
+        clearTimeout(timer);
+    });
 
-
-
-dragElement(p);
-
-let timer;
-
-p.addEventListener("touchstart",()=>{
-
-    timer = setTimeout(()=>{
-
-        if(confirm(player.name + " を削除しますか？")){
-
-            p.remove();
-
-        }
-
-    },700);
-p.addEventListener("touchend",()=>{
-
-    clearTimeout(timer);
-
-});
 }
-
-
-
 
 // ドラッグ処理
 
