@@ -293,11 +293,20 @@ document.getElementById("clearFormation").addEventListener("click", () => {
     if(!confirm("コート上の選手をすべて削除しますか？")){
         return;
     }
-
-    document.querySelectorAll(".player").forEach(player => {
-        player.remove();
-    });
-
-    localStorage.removeItem("formation");
-
+    
+    document.querySelectorAll(".player").forEach(p => {
+    const number = Number(p.dataset.number);
+    const player = players.find(pl => pl.number === number);
+    if(player){
+        player.placed = false;
+    }
+    const item = document.querySelector(
+        '.player-item[data-number="' + number + '"]'
+    );
+    if(item){
+        item.querySelector("button").disabled = false;
+    }
+    p.remove();
+　　　});
+　　　localStorage.removeItem("formation");
 });
