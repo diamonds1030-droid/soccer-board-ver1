@@ -87,7 +87,7 @@ let btn=div.querySelector("button");
 btn.onclick=()=>{
 
 createPlayerOnField(player);
-
+saveFormation();
 };
 
 if(player.number <= 13){
