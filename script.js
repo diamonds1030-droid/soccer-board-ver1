@@ -179,7 +179,6 @@ function start(e){
 
     document.addEventListener("touchend", end);
     document.addEventListener("mouseup", end);
-    saveFormation();
 }
 
 
