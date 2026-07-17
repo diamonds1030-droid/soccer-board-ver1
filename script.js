@@ -12,6 +12,8 @@ number:i,
 
 name:"選手"+i
 
+placed:false
+
 });
 
 }
@@ -43,9 +45,8 @@ players.forEach(player=>{
 
 
 let div=document.createElement("div");
-
 div.className="player-item";
-
+div.dataset.number = player.number;
 
 div.innerHTML=`
 
@@ -80,28 +81,28 @@ input.addEventListener("input", () => {
 });
 
 
-
+//選手配置
 let btn=div.querySelector("button");
 
-
-btn.onclick=()=>{
-
-createPlayerOnField(player);
-saveFormation();
+btn.onclick = () => {
+    if(player.placed){
+        return;
+    }
+    createPlayerOnField(player);
+    player.placed = true;
+    btn.disabled = true;
+    saveFormation();
 };
 
 if(player.number <= 13){
-
     yellowList.appendChild(div);
-
 }else{
-
     blueList.appendChild(div);
-
 }
 
 });
 
+//配置読込
 loadFormation();
 
 // コート配置
@@ -128,6 +129,13 @@ function createPlayerOnField(player){
 
             if(confirm(player.name + " を削除しますか？")){
                 p.remove();
+                 player.placed = false;
+                const item = document.querySelector(
+                    '.player-item[data-number="' + player.number + '"]'
+                );
+                if(item){
+                    item.querySelector("button").disabled = false;
+                }
                 saveFormation();
             }
 
@@ -260,7 +268,13 @@ function loadFormation(){
             const player = players.find(p => p.number === data.number);
         
         if(!player) return;
-
+        player.placed = true;
+        const item = document.querySelector(
+           '.player-item[data-number="' + player.number + '"]'
+        );
+        if(item){
+           item.querySelector("button").disabled = true;
+        }
         createPlayerOnField(player);
 
         const p =
