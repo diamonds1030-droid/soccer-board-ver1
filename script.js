@@ -119,8 +119,6 @@ function createPlayerOnField(player){
     field.appendChild(p);
 
     dragElement(p);
-    
-    saveFormation();
 
     let timer;
 
