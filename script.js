@@ -88,7 +88,7 @@ btn.onclick = () => {
     if(player.placed){
         return;
     }
-    const playerCount = document.querySelectorAll(".player").length;
+    const playerCount = players.filter(p => p.placed).length;
       if(playerCount >= 8){
         alert("配置できる選手は8名までです。");
         return;
