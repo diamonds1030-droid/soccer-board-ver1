@@ -10,6 +10,30 @@ h2{
     margin:5px;
 }
 
+/*ツールバー*/
+#toolbar{
+    width:90%;
+    margin:8px auto;
+    display:flex;
+    justify-content:flex-end;
+}
+
+#toolbar button{
+
+    padding:8px 16px;
+
+    border:none;
+
+    border-radius:6px;
+
+    background:#d32f2f;
+
+    color:#fff;
+
+    font-size:14px;
+
+    cursor:pointer;
+}
 
 /* コート */
 #field{
