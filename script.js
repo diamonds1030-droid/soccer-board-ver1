@@ -8,8 +8,7 @@ for(let i=1;i<=maxPlayers;i++){
 
 players.push({
 
-//number:i,
-number: player.number
+number:i,
 
 name:"選手"+i
 
