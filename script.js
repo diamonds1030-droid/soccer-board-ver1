@@ -88,6 +88,11 @@ btn.onclick = () => {
     if(player.placed){
         return;
     }
+    const playerCount = document.querySelectorAll(".player").length;
+      if(playerCount >= 8){
+        alert("配置できる選手は8名までです。");
+        return;
+    }
     createPlayerOnField(player);
     player.placed = true;
     btn.disabled = true;
