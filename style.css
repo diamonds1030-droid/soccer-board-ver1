@@ -178,13 +178,6 @@ body.dragging{
     width:100%;
 }
 
-/* 選手のタッチ操作を優先 */
-.player{
-    touch-action:none;
-    user-select:none;
-    -webkit-user-select:none;
-}
-
 
 #player-header{
     display:flex;
