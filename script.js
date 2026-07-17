@@ -8,7 +8,8 @@ for(let i=1;i<=maxPlayers;i++){
 
 players.push({
 
-number:i,
+//number:i,
+number: player.number
 
 name:"選手"+i
 
@@ -102,7 +103,7 @@ if(player.number <= 13){
 
 });
 
-
+loadFormation();
 
 // コート配置
 function createPlayerOnField(player){
@@ -118,6 +119,8 @@ function createPlayerOnField(player){
     field.appendChild(p);
 
     dragElement(p);
+    
+    saveFormation();
 
     let timer;
 
@@ -127,6 +130,7 @@ function createPlayerOnField(player){
 
             if(confirm(player.name + " を削除しますか？")){
                 p.remove();
+                saveFormation();
             }
 
         }, 700);
@@ -175,6 +179,7 @@ function start(e){
 
     document.addEventListener("touchend", end);
     document.addEventListener("mouseup", end);
+    saveFormation();
 }
 
 
@@ -213,6 +218,60 @@ function end(){
 
     document.removeEventListener("touchend", end);
     document.removeEventListener("mouseup", end);
+    
 }
 
 }
+
+//配置保存
+function saveFormation(){
+
+    const formation = [];
+
+    document.querySelectorAll(".player").forEach(p => {
+
+        formation.push({
+
+            name: p.textContent,
+
+            left: p.style.left,
+
+            top: p.style.top
+
+        });
+
+    });
+
+    localStorage.setItem(
+        "formation",
+        JSON.stringify(formation)
+    );
+
+}
+
+function loadFormation(){
+
+    const saved = localStorage.getItem("formation");
+
+    if(!saved) return;
+
+    const formation = JSON.parse(saved);
+
+    formation.forEach(data => {
+
+            const player = players.find(p => p.number === data.number);
+        
+        if(!player) return;
+
+        createPlayerOnField(player);
+
+        const p =
+            field.lastElementChild;
+
+        p.style.left = data.left;
+        p.style.top = data.top;
+
+    });
+
+}
+
