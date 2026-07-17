@@ -10,7 +10,7 @@ players.push({
 
 number:i,
 
-name:"選手"+i
+name:"選手"+i,
 
 placed:false
 
