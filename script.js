@@ -217,7 +217,7 @@ function end(){
 
     document.removeEventListener("touchend", end);
     document.removeEventListener("mouseup", end);
-    
+    saveFormation();
 }
 
 }
@@ -231,7 +231,8 @@ function saveFormation(){
 
         formation.push({
 
-            name: p.textContent,
+            //name: p.textContent,
+            number: Number(p.dataset.number),
 
             left: p.style.left,
 
