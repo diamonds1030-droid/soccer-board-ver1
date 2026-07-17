@@ -111,6 +111,7 @@ function createPlayerOnField(player){
 
     p.className = "player";
     p.innerHTML = player.name;
+    p.dataset.number = player.number;
 
     p.style.left = "45%";
     p.style.top = "45%";
