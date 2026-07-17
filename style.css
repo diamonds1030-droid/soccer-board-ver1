@@ -152,10 +152,16 @@ flex:1;
 .player-item input{
     flex:1;
     min-width:0;
+
+    font-size:16px;      /* ←追加 */
+    height:30px;         /* お好みで */
+    padding:2px 4px;     /* お好みで */
+    box-sizing:border-box;
 }
 
 .player-item button{
-    width:42px;
+    width:38px;
+    height:30px;
     flex-shrink:0;
     font-size:11px;
 }
