@@ -275,3 +275,17 @@ function loadFormation(){
 
 }
 
+//配置クリア
+document.getElementById("clearFormation").addEventListener("click", () => {
+
+    if(!confirm("コート上の選手をすべて削除しますか？")){
+        return;
+    }
+
+    document.querySelectorAll(".player").forEach(player => {
+        player.remove();
+    });
+
+    localStorage.removeItem("formation");
+
+});
