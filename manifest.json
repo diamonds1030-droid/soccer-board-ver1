@@ -1,0 +1,20 @@
+{
+  "name": "8人制サッカー戦術ボード",
+  "short_name": "戦術ボード",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#3aa655",
+  "theme_color": "#3aa655",
+  "icons": [
+    {
+      "src": "61646591-6637-48B2-AAF1-CDCF559E7097.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "DCB68473-5504-48A8-80E7-6F810569D2DB.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
